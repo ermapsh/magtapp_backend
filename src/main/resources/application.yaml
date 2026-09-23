@@ -3,7 +3,7 @@ spring:
     name: pro
 
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/razorpay}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/magtapp}
     username: ${DB_USER:}
     password: ${DB_PASSWORD:}
 

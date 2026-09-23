@@ -3,7 +3,7 @@ package com.magtapp.pro;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.magtapp.pro", "com.magtapp.common"})
+@SpringBootApplication
 public class ProApplication {
 
 	public static void main(String[] args) {
