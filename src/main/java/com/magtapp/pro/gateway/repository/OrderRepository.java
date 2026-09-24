@@ -1,7 +1,7 @@
-package com.magtapp.pro.app.repository;
+package com.magtapp.pro.gateway.repository;
 
 import com.magtapp.pro.gateway.dto.response.CreateOrderResponse;
-import com.magtapp.pro.app.entity.Order;
+import com.magtapp.pro.gateway.entity.Order;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;

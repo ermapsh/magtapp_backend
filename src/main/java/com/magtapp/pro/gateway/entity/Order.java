@@ -1,4 +1,4 @@
-package com.magtapp.pro.app.entity;
+package com.magtapp.pro.gateway.entity;
 
 
 import com.magtapp.pro.common.entity.BaseEntity;

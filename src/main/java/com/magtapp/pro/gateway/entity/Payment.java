@@ -3,7 +3,6 @@ import com.magtapp.pro.common.entity.Money;
 import com.magtapp.pro.gateway.enums.PaymentMethod;
 import com.magtapp.pro.gateway.enums.PaymentStatus;
 import com.magtapp.pro.common.entity.BaseEntity;
-import com.magtapp.pro.app.entity.Order;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.JdbcTypeCode;

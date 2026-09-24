@@ -1,13 +1,13 @@
-package com.magtapp.pro.app.service.impl;
+package com.magtapp.pro.gateway.service.impl;
 
 
 import com.magtapp.pro.common.mapper.CreateOrderResponseMapper;
 import com.magtapp.pro.gateway.dto.request.CreateOrderRequest;
 import com.magtapp.pro.gateway.dto.response.CreateOrderResponse;
-import com.magtapp.pro.app.entity.Order;
+import com.magtapp.pro.gateway.entity.Order;
 import com.magtapp.pro.app.exception.DuplicateResourceException;
-import com.magtapp.pro.app.repository.OrderRepository;
-import com.magtapp.pro.app.service.OrderService;
+import com.magtapp.pro.gateway.repository.OrderRepository;
+import com.magtapp.pro.gateway.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

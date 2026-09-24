@@ -26,7 +26,7 @@ public class JwtUtil {
         Instant now = Instant.now();
         return Jwts.builder().
                 issuedAt(Date.from(now)).
-                expiration(Date.from(now.plusSeconds(60*100))).
+                expiration(Date.from(now.plusSeconds(365L * 24 * 60 * 60))).
                 claim("user_id", userId).
                 signWith(getSecretKey()).
                 compact();

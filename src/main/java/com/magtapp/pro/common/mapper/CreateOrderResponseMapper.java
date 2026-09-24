@@ -1,7 +1,7 @@
 package com.magtapp.pro.common.mapper;
 
 import com.magtapp.pro.gateway.dto.response.CreateOrderResponse;
-import com.magtapp.pro.app.entity.Order;
+import com.magtapp.pro.gateway.entity.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 

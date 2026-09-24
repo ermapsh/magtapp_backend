@@ -20,7 +20,7 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @Value("${payment.gateway.merchantId}")
-    private UUID merchantId; // this is merchantId that allow by bank or any other service provide
+    private UUID merchantId; // this is merchantId that allow by bank or any other service provider
 
     @PostMapping("")
     public ResponseEntity<ApiResponse<PaymentResponse>> initiate(@Valid @RequestBody PaymentInitRequest request) {

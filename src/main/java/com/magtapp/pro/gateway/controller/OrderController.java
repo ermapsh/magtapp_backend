@@ -1,11 +1,11 @@
-package com.magtapp.pro.app.controller;
+package com.magtapp.pro.gateway.controller;
 
 
 import com.magtapp.pro.gateway.dto.request.CreateOrderRequest;
 import com.magtapp.pro.gateway.dto.response.CreateOrderResponse;
 import com.magtapp.pro.common.dto.res.ApiResponse;
 import com.magtapp.pro.app.security.UserContext;
-import com.magtapp.pro.app.service.OrderService;
+import com.magtapp.pro.gateway.service.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
