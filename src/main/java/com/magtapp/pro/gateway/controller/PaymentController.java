@@ -29,13 +29,4 @@ public class PaymentController {
                 paymentService.initiate(merchantId, request)
         );
     }
-
-    @PostMapping("/{paymentId}/capture")
-    public ResponseEntity<ApiResponse<PaymentResponse>> capture(@RequestParam UUID paymentId) {
-        return ApiResponse.ok(
-                "Payment capture",
-                paymentService.capture(merchantId, paymentId)
-        );
-    }
-
 }

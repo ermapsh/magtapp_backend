@@ -1,8 +1,8 @@
 package com.magtapp.pro.app.entity;
 
-import com.magtapp.pro.common.entity.BaseEntity;
-import com.magtapp.pro.app.enums.SubscriptionPlatform;
+import com.magtapp.pro.app.enums.SubscriptionPlan;
 import com.magtapp.pro.app.enums.SubscriptionStatus;
+import com.magtapp.pro.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,17 +38,11 @@ public class Subscription extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
-    private SubscriptionStatus status;
+    private SubscriptionPlan plan;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 20)
-    private SubscriptionPlatform platform;
-
-    @Column(nullable = false, length = 100)
-    private String productId;
-
-    @Column(length = 255)
-    private String providerSubscriptionId;
+    @Column(nullable = false, length = 30)
+    private SubscriptionStatus status;
 
     @Column(nullable = false)
     private Instant startedAt;

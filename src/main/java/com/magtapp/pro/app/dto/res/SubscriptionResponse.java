@@ -1,19 +1,20 @@
 package com.magtapp.pro.app.dto.res;
 
-import com.magtapp.pro.app.enums.SubscriptionPlatform;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.magtapp.pro.app.enums.SubscriptionPlan;
 import com.magtapp.pro.app.enums.SubscriptionStatus;
 
 import java.time.Instant;
 import java.util.UUID;
 
-public record SubscriptionResponse (
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public record SubscriptionResponse(
         UUID id,
+        SubscriptionPlan plan,
         SubscriptionStatus status,
-        SubscriptionPlatform platform,
-        String productId,
         Instant startedAt,
         Instant expiresAt,
         boolean autoRenewing,
         boolean isPro
-){
+) {
 }

@@ -1,6 +1,7 @@
 package com.magtapp.pro.gateway.entity;
 
-
+import com.magtapp.pro.app.entity.User;
+import com.magtapp.pro.app.enums.SubscriptionPlan;
 import com.magtapp.pro.common.entity.BaseEntity;
 import com.magtapp.pro.common.entity.Money;
 import com.magtapp.pro.gateway.enums.OrderStatus;
@@ -18,22 +19,34 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "orders", indexes = {
-        @Index(name = "idx_order_id_merchant_id", columnList = "id, merchant_id")
-})
 @Builder
+@Table(
+        name = "orders",
+        indexes = {
+                @Index(name = "idx_order_user_id", columnList = "user_id")
+        }
+)
 public class Order extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    /* No FK- cross service boundary */
-    @Column(nullable = false, name = "merchant_id")
-    private UUID merchantId;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @Embedded
     private Money amount;
+
+    @Enumerated(EnumType.STRING)
+    @Column(
+            name = "subscription_plan",
+            nullable = false,
+            length = 30
+    )
+    @Builder.Default
+    private SubscriptionPlan subscriptionPlan = SubscriptionPlan.FREE;
 
     @Column(length = 100)
     private String receipt;
@@ -48,10 +61,9 @@ public class Order extends BaseEntity {
     private Integer attempts = 0;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(length = 1000, columnDefinition = "jsonb")
+    @Column(columnDefinition = "jsonb")
     private Map<String, Object> notes;
 
     @Column(nullable = false, name = "expires_at")
     private LocalDateTime expiresAt;
-
 }

@@ -15,7 +15,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class CreateOrderResponse{
     UUID id;
-    UUID merchantId;
     String receipt;
     Money amount;
     OrderStatus status;

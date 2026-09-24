@@ -1,5 +1,6 @@
 package com.magtapp.pro.gateway.dto.request;
 
+import com.magtapp.pro.app.enums.SubscriptionPlan;
 import com.magtapp.pro.common.entity.Money;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -12,10 +13,13 @@ public record CreateOrderRequest(
         @NotNull(message = "Amount is required")
         Money amount,
 
-        @Size(max = 100)
-        String receipt, // order-id, only know to merchant
+        @NotNull(message = "Subscription plan is required")
+        SubscriptionPlan subscriptionPlan,
 
-        Map<String, Object> notes, // {object that hold data of user in json type data}
+        @Size(max = 100)
+        String receipt,
+
+        Map<String, Object> notes,
 
         LocalDateTime expiresAt
 ) {}
